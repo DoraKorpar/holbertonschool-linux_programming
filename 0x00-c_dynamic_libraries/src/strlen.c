@@ -1,3 +1,12 @@
-int _strlen(__attribute__((unused)) char *s)
+int _strlen(char *s)
 {
+	int i;
+
+	i = 0;
+	while (*s) {
+		s++;
+		i++;
+	}
+		
+	return (i);
 }
