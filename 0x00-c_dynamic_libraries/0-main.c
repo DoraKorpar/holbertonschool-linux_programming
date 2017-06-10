@@ -9,5 +9,5 @@
 int main(void)
 {
 	printf("%d\n", _strlen("Holberton"));
-	return(0);
+	return (0);
 }
