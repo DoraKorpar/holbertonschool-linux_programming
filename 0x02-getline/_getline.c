@@ -17,17 +17,19 @@ char *_getline(const int fd)
 	int i, j;
 	size_t nread;
 
-	if ((buf = malloc(READ_SIZE)) == NULL)
+	buf = malloc(READ_SIZE);
+	if (buf == NULL)
 	{
 		return (NULL);
 	}
 
 	while ((nread = read(fd, buf, READ_SIZE)) > 0)
 	{
-		if ((line = malloc(READ_SIZE)) == NULL)
+		line = malloc(READ_SIZE);
+		if (line == NULL)
 		{
 			free(buf);
-			return (NULL);						\
+			return (NULL);
 		}
 
 		i = 0;
