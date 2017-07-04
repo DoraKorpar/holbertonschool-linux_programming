@@ -36,6 +36,7 @@ char *_getline(const int fd)
 			i++;
 			j++;
 		}
+		line[j] = '\0';
 		return (line);
 	}
 	return (NULL);
