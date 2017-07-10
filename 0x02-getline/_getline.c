@@ -13,9 +13,9 @@
 char *_getline(const int fd)
 {
 	static char *buf;
-	char *line;
-	int i, j;
-	size_t nread;
+	static char *line;
+	static int i, j;
+	static size_t nread;
 
 	buf = malloc(READ_SIZE);
 	if (buf == NULL)
