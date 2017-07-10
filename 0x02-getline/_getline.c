@@ -12,7 +12,7 @@
  */
 char *_getline(const int fd)
 {
-	char *buf;
+	static char *buf;
 	char *line;
 	int i, j;
 	size_t nread;
