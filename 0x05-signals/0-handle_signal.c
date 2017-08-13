@@ -3,6 +3,11 @@
 
 #include "signals.h"
 
+/**
+ * handler - function to be executed when signal handled
+ *
+ * Return: void
+ */
 void handler(int signum)
 {
 	printf("Gotcha! [%d]\n", signum);
