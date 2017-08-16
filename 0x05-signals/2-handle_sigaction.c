@@ -26,11 +26,9 @@ int handle_sigaction(void)
 	sigemptyset(&new_action.sa_mask);
 	new_action.sa_flags = 0;
 
-	sigaction(SIGINT, NULL, &old_action);
+	if (sigaction(SIGINT, NULL, &old_action) < 0)
+		return (-1);
 	if (old_action.sa_handler != SIG_IGN)
-	{
-		if (sigaction (SIGINT, &new_action, NULL) < 0)
-			return (-1);
-	}
+		sigaction (SIGINT, &new_action, NULL);
 	return (0);
 }
