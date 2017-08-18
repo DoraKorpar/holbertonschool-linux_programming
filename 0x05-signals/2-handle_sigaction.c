@@ -5,6 +5,7 @@
 
 /**
  * handler - function to be executed when signal handled
+ * @signum: signal integer
  *
  * Return: void
  */
@@ -28,6 +29,9 @@ int handle_sigaction(void)
 	if (sigaction(SIGINT, NULL, &old_action) < 0)
 		return (-1);
 	if (old_action.sa_handler != SIG_IGN)
-		sigaction (SIGINT, &new_action, NULL);
+	{
+		if (sigaction (SIGINT, &new_action, NULL) != 0)
+			return (-1);
+	}
 	return (0);
 }
